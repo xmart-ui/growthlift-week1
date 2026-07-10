@@ -23,11 +23,10 @@ const newQuoteBtn = document.getElementById("new-quote");
 
 function getQuote() {
 
-
     quoteText.textContent = "Loading...";
 
     fetch("https://dummyjson.com/quotes/random")
-        .then(response => response.json())
+        .then(res => res.json())
         .then(data => {
             quoteText.textContent = `"${data.quote}"`;
             console.log(data);
@@ -40,6 +39,4 @@ function getQuote() {
 
 
 getQuote();
-
-
 newQuoteBtn.addEventListener("click", getQuote);
